@@ -47,3 +47,4 @@ jobs:
     # Run testing on the code
     - name: Run testing
       run: cd frontend/ && go test
+      
