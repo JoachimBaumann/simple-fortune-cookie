@@ -41,7 +41,7 @@ jobs:
 
   push image to dockerhub:
     needs: build
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Download Repo
       uses: actions/download-artifact@v2
