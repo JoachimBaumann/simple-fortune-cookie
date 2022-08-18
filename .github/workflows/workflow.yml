@@ -1,14 +1,9 @@
 name: Java CI
 on: push
 jobs:
-  Clone-down:
+  frontend_test:
     runs-on: ubuntu-latest
-    container: gradle:6-jdk11
     steps:
-      - name: Clone-down
-        uses: actions/checkout@v2
-      - name: Upload Repo
-        uses: actions/upload-artifact@v2
-        with:
-          name: code
-          path: .
+      - name: frontend_test
+        run: frontend/main_test.go
+
