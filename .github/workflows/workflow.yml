@@ -39,7 +39,7 @@ jobs:
     - name: Run testing
       run: cd frontend/ && go test
 
-  push image to dockerhub:
+  push_image_to_dockerhub:
     needs: build
     runs-on: ubuntu-latest
     steps:
