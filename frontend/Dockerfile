@@ -5,6 +5,7 @@ RUN cd /src/ && go build -o frontend
 
 #Final Stage
 FROM alpine
+add . /app/
 WORKDIR /app
 COPY --from=builder /src/frontend /app/
 RUN apk add libc6-compat
