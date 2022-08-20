@@ -1,12 +1,12 @@
-FROM golang:1.18
+FROM golang:1.16-alpine
 
-WORKDIR /usr/src/app
-
-# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
-COPY go.mod go.sum ./
-RUN go mod download && go mod verify
+WORKDIR /backend
 
 COPY . .
-RUN go build -v -o /usr/local/bin/app ./...
+RUN go get github.com/gomodule/redigo/redis
 
-CMD ["app"]
+
+RUN go build
+
+
+CMD ["go", "run", "backend"]
